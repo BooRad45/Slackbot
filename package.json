@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/BooRad45/Slackbot#readme",
   "dependencies": {
+    "@slack/client": "^3.9.0",
     "express": "^4.15.3"
   }
 }
