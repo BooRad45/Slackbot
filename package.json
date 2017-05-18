@@ -1,5 +1,5 @@
 {
-  "name": "slackbot",
+  "name": "AUDREY",
   "version": "1.0.0",
   "description": "Slackbot microservice built with Node.js and Express.js.",
   "main": "server/service.js",
