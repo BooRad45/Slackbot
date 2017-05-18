@@ -1,0 +1,22 @@
+{
+  "name": "slackbot",
+  "version": "1.0.0",
+  "description": "Slackbot microservice built with Node.js and Express.js.",
+  "main": "server/service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BooRad45/Slackbot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BooRad45/Slackbot/issues"
+  },
+  "homepage": "https://github.com/BooRad45/Slackbot#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
