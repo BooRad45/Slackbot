@@ -12,18 +12,31 @@ function handleOnAuthenticated(rtmStartData) {
 }
 
 function handleOnMessage(message) {
+    
     nlp.ask(message.text, (err, res) => {
-        if (err) {
+        if(err) {
             console.log(err);
             return;
         }
 
-        rtm.sendMessage('Sorry, I did not understand.', message.channel, function messageSent() {
+        if(!res.intent) {
+            return rtm.sendMessage("Sorry, I don't know what you are talking about.", message.channel);
 
+        } else if(res.intent[0].value == 'time' && res.location) {
+            return rtm.sendMessage(`I don't yet know the time in ${res.location[0].value}`, message.channel);
+        } else {
+            console.log(res);
+            return rtm.sendMessage("Sorry, I don't know what you are talking about.", message.channel);
+        }
+
+
+        rtm.sendMessage('Sorry, I did not understand.', message.channel, function messageSent() {
+            // optionally, you can supply a callback to execute once the message has been sent
         });
     });
-
+    
 }
+   
 
 function addAuthenticatedHandler(rtm, handler) {
     rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, handler);
