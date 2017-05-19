@@ -9,7 +9,7 @@ const http = require('http');
 // initiate the server by adding in 'service' object
 const server = http.createServer(service);
 
-const slackToken = 'xoxb-184836662593-8I3wUkDYuymr6hoh8LE9Nt5J';
+const slackToken = '&&&&&&&&&&;
 const slackLogLevel = 'verbose';
 
 const rtm = slackClient.init(slackToken, slackLogLevel);
