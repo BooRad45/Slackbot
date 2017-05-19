@@ -10,10 +10,10 @@ const http = require('http');
 const server = http.createServer(service);
 
 
-const witToken = 'S46OXK2GLZQAAQT7VF7KRNG5GMZP5UG7';
+const witToken = '5UAY242LLPRJ427HXIEX4SRJUAZA5OC3';
 const witClient = require('../server/witclient')(witToken);
 
-const slackToken = 'xoxb-184836662593-8I3wUkDYuymr6hoh8LE9Nt5J';
+const slackToken = 'xoxb-184836662593-NJiLq0mwRUQ6lnhtG1sXdmSM';
 const slackLogLevel = 'verbose';
 
 const rtm = slackClient.init(slackToken, slackLogLevel, witClient);
