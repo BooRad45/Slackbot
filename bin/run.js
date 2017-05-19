@@ -9,6 +9,7 @@ const http = require('http');
 // initiate the server by adding in 'service' object
 const server = http.createServer(service);
 
+
 const witToken = 'S46OXK2GLZQAAQT7VF7KRNG5GMZP5UG7';
 const witClient = require('../server/witclient')(witToken);
 
