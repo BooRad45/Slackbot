@@ -56,5 +56,6 @@ typings/
 
 # dotenv environment variables file
 .env
-# bin folder 
-bin
+# bin folder with run.js 
+bin/run.js
+
