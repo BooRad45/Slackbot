@@ -5,6 +5,10 @@
 const express = require("express");
 // store express application object in variable 'service'
 const service = express();
+const ServiceRegistry = require('./serviceRegistry');
+const serviceRegistry = new ServiceRegistry();
+
+service.set('serviceRegistry', serviceRegistry);
 
 // adding service registry to make app more resilient
 service.put('/service/:intent/:port', (req, res, next) => {
@@ -14,7 +18,7 @@ service.put('/service/:intent/:port', (req, res, next) => {
     const serviceIp = req.connection.remoteAddress.includes('::')
         // if in IPv6 notation we have to put the IP address in curly brackets
         ? `[${req.connection.remoteAddress}]` : req.connection.remoteAddress; // all other cases
-
+    serviceRegistry.add(serviceIntent, serviceIp, servicePort);
     res.json({ result: `${serviceIntent} at ${serviceIp}:${servicePort}` });
 });
 
